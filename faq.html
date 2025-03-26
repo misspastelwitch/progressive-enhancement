@@ -10,7 +10,24 @@
 		<style>
 			/* Schrijf hier gewoon je CSS voor dit component */
 
-	.one{
+summary::before {
+	content: '+';
+	margin-left: 8px;
+	margin-right: 8px;
+    right: 10px;
+    font-size: 30px;
+    transition: transform 0.3s ease;
+}
+
+details:open summary::before {
+	content: '+';
+	margin-left: 0.5em;
+    right: 10px;
+    font-size: 30px;
+    transition: transform 0.3s ease;
+}
+
+summary {
 	border: solid, 2px;
 	border-color: black;
 	font-family: inherit;
@@ -18,146 +35,100 @@
     padding: 10px;
     width: fit-content;
 	margin-top: 10px;
-	margin-left: 10px;
+	padding-left: 10px;
 	margin-right: 10px;
-
+	list-style-type: none;
 }
-.two{
-	border: solid, 2px;
-	border-color: black;
-	font-family: inherit;
-	border-radius: 10px;
-    padding: 10px;
-    width: fit-content;
-	margin-top: 10px;
-	margin-left: 10px;
-	margin-right: 10px;
 
-}
-.three{
-	border: solid, 2px;
-	border-color: black;
-	font-family: inherit;
-	border-radius: 10px;
-    padding: 10px;
-    width: fit-content;
-	margin-top: 10px;
-	margin-left: 10px;
-	margin-right: 10px;
-
-}
 details:open > .one {
 	background: var(--purple);
 	border: none;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	border-bottom-left-radius: 0%;
-	border-bottom-right-radius: 0%;
 	margin-top: 10px;
-	margin-left: 10px;
 	margin-right: 10px;
 
 }
 details:open > .two {
 	background: var(--green);
+
 	border: none;
-	padding: none;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	border-bottom-left-radius: 0%;
-	border-bottom-right-radius: 0%;
 	margin-top: 10px;
-	margin-left: 10px;
 	margin-right: 10px;
 }
 details:open > .three {
 	background: var(--yellow);
 	border: none;
-	padding: none;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	border-bottom-left-radius: 0%;
-	border-bottom-right-radius: 0%;
-	
 	margin-top: 10px;
-	margin-left: 10px;
 	margin-right: 10px;
 }
 
-    .openklap1{
+.openklap1{
 	padding: .3em 1em;
-	border-radius: .5rem;
+	border-radius: .5em;
 	font-family: inherit;
 	font-size: medium;
 	text-decoration: none;
 	background: var(--purple);
 	cursor: pointer;
 	max-width: 75ch;
-	margin: 0%;
+	margin: 0;
 }
 
-	.openklap2{
+.openklap2{
 	padding: .3em 1em;
-	border-radius: .5rem;
+	border-radius: .5em;
 	font-family: inherit;
 	font-size: medium;
 	text-decoration: none;
 	background: var(--green);
 	cursor: pointer;
 	max-width: 75ch;
-	margin: 0%;
+	margin: 0;
 	
 }
 
-	.openklap3{
+.openklap3{
 	margin-bottom: 20px;
 	padding: .3em 1em;
-	border-radius: .5rem;
+	border-radius: .5em;
 	font-family: inherit;
 	font-size: medium;
 	text-decoration: none;
 	background: var(--yellow);
 	cursor: pointer;
 	max-width: 75ch;
-	margin: 0%;
+	margin: 0;
 }
 
 			/* Hint: Denk aan de states van het component; deze kan open en dicht zijn */
 		</style>
 	</head>
-	<body>
-<h1>Veelgestelde vragen</h1>
-
-		<details>
-		<summary class="one">Wat is frontend development?</summary>
-		<p class="openklap1">Een frontend developer ontwerpt en bouwt websites in HTML, CSS en JavaScript. 
-			Deze frontend talen leer je bij ons, je hebt dus geen voorkennis nodig.
-		 </p> 
-		</details>
-
-
-			<details>
-				<summary class="two">Moet ik al kunnen coderen?</summary>
-				<p class="openklap2">Nee, je hebt helemaal geen voorkennis nodig om te beginnen aan deze opleiding, we kunnen je alles leren!
-		 Als je wel al voorkennis hebt, is dat alleen maar goed, dan kunnen we je helpen je skills te verbeteren en te verdiepen in de stof.
-		 </details>
-
-		<details>
-			<summary class="three">Wat is een Associate Degree?</summary>
-			<p class="openklap3">Een Associate degree-opleiding is een tweejarige hbo-opleiding op niveau 5. Een Ad slaat een brug tussen het mbo-4 (niveau 4) en een hbo-bachelor (niveau 6).
-		 Met een Associate degree kies je voor een praktijkgerichte hbo-opleiding; je wordt opgeleid voor een beroep dat aansluit bij de praktijk. 
-		In dit geval word je opgeleid tot ‘frontend designer/developer' of kortweg ‘frontender’. Frontenders ontwerpen en maken interactieve, toegankelijke toepassingen voor het web.
-		 Frontenders werken binnen het gebied van software development, interactieontwerp en digitaal visueel ontwerp.
-		Na afronding van deze tweejarige hbo-opleiding, krijg je een wettelijk erkend hbo-diploma met de graad Associate degree.
-		 Met dit Ad-diploma kun je direct aan de slag in het werkveld of doorstromen naar de bacheloropleiding Communication and Multimedia Design (CMD).
-		 </details>
-
-
-		<details>
-			<summary>Demo video</summary>
-			<video src="assets/faq.mp4" width="765" height="769" controls muted autoplay loop>
-				<a href="assets/faq.mp4">assets/faq.mp4</a>
-			</video>
-		</details>
-	</body>
-</html>
+<body>
+	<h1>Veelgestelde vragen</h1>
+	<details>
+	   <summary class="one">Wat is frontend development?</summary>
+	   <p class="openklap1">Een frontend developer ontwerpt en bouwt websites in HTML, CSS en JavaScript. 
+		  Deze frontend talen leer je bij ons, je hebt dus geen voorkennis nodig.
+	   </p>
+	</details>
+	<details>
+	   <summary class="two">Moet ik al kunnen coderen?</summary>
+	   <p class="openklap2">Nee, je hebt helemaal geen voorkennis nodig om te beginnen aan deze opleiding, we kunnen je alles leren!
+		  Als je wel al voorkennis hebt, is dat alleen maar goed, dan kunnen we je helpen je skills te verbeteren en te verdiepen in de stof.
+	</details>
+	<details>
+	   <summary class="three">Wat is een Associate Degree?</summary>
+	   <p class="openklap3">Een Associate degree-opleiding is een tweejarige hbo-opleiding op niveau 5. Een Ad slaat een brug tussen het mbo-4 (niveau 4) en een hbo-bachelor (niveau 6).
+		  Met een Associate degree kies je voor een praktijkgerichte hbo-opleiding; je wordt opgeleid voor een beroep dat aansluit bij de praktijk. 
+		  In dit geval word je opgeleid tot ‘frontend designer/developer' of kortweg ‘frontender’. Frontenders ontwerpen en maken interactieve, toegankelijke toepassingen voor het web.
+		  Frontenders werken binnen het gebied van software development, interactieontwerp en digitaal visueel ontwerp. </p>
+	   <p class="openklap3">
+		  Na afronding van deze tweejarige hbo-opleiding, krijg je een wettelijk erkend hbo-diploma met de graad Associate degree.
+		  Met dit Ad-diploma kun je direct aan de slag in het werkveld of doorstromen naar de bacheloropleiding Communication and Multimedia Design (CMD).</p>
+	</details>
+	<details>
+	   <summary>Demo video</summary>
+	   <video src="assets/faq.mp4" width="765" height="769" controls muted autoplay loop>
+		  <a href="assets/faq.mp4">assets/faq.mp4</a>
+	   </video>
+	</details>
+ </body>
